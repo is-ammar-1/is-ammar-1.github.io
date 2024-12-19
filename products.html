@@ -1,23 +1,28 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>AK_attire - Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - AK_attire</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- ...existing navigation code... -->
-    <main>
-        <section id="products">
-            <h2>Our Products</h2>
-            <div class="product-grid">
-                <!-- Products will be populated dynamically -->
-            </div>
-        </section>
-    </main>
-    <!-- ...existing code... -->
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart</a>
+        </nav>
+    </header>
+    <section class="container">
+        <h1>Our Products</h1>
+        <div id="product-list" class="product-list"></div>
+    </section>
+    <footer>
+        <p>&copy; 2023 AK_attire. All rights reserved.</p>
+    </footer>
     <script src="products.js"></script>
-    <script src="main.js"></script>
 </body>
 </html>
