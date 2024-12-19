@@ -4,10 +4,65 @@ const products = [
         name: 'Product 1',
         description: 'Description for product 1',
         price: 29.99,
-        image: 'product1.jpg',
+        image: 'images/1.JPG',
         category: 'Category 1'
     },
-    // ...add 9 more products...
+    {
+        id: 2,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 3,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 4,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 5,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 6,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 7,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
+    {
+        id: 8,
+        name: 'Product 1',
+        description: 'Description for product 1',
+        price: 29.99,
+        image: 'images/1.JPG',
+        category: 'Category 1'
+    },
 ];
 
 function displayProducts(products) {

@@ -21,7 +21,7 @@ nav a {
 }
 
 .hero {
-    background: url('hero-image.jpg') no-repeat center center/cover;
+    background: url('images/2.JPG') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     justify-content: center;
