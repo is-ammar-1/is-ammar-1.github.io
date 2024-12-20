@@ -117,3 +117,38 @@ nav a {
 .button:hover {
     background-color: #ffb74d;
 }
+
+/* Cart Styles */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+.cart-item h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.cart-item p {
+    margin: 0;
+}
+
+.cart-item .quantity {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item .quantity input {
+    width: 40px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.cart-total {
+    text-align: right;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
