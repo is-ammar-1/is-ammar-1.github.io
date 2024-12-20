@@ -21,7 +21,7 @@ function updateCartDisplay() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const addToCartButtons = document.querySelectorAll('.button');
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
     addToCartButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
