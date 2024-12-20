@@ -25,10 +25,11 @@ nav a {
     background: url('images/banner.jpeg') no-repeat center center/cover;
     height: 80vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-end;
+    align-items: flex-end;
     color: #fff;
     text-align: center;
+    padding: 20px;
 }
 
 .hero-banner {
@@ -45,6 +46,11 @@ nav a {
 .hero h1 {
     font-size: 3em;
     margin: 0;
+}
+
+.hero-button {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
