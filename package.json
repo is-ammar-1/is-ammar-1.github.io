@@ -5,11 +5,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-  "build": "npm run dev",
-  "deploy": "npm run build && gh-pages -d dist",
-  "dev": "vite",
-  "lint": "eslint .",
-  "preview": "vite preview"
+    "build": "vite build",
+    "dev": "vite",
+    "deploy": "npm run build && gh-pages -d dist",
+    "lint": "eslint .",
+    "preview": "vite preview"
 },
   "dependencies": {
     "lucide-react": "^0.344.0",
