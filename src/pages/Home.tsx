@@ -1,72 +1,58 @@
+import React from 'react';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
-export default function Home() {
+export function Home() {
   return (
-    <div className="bg-black text-white">
+    <div className="relative">
+      {/* Hero Section */}
       <div className="relative h-screen">
-        <img 
-          src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e"
-          alt="Hero" 
-          className="w-full h-full object-cover opacity-50"
+        <img
+          src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&q=80&w=2070"
+          alt="Hero"
+          className="absolute inset-0 w-full h-full object-cover"
         />
+        <div className="absolute inset-0 bg-black/40" />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">AK ATTIRE</h1>
-            <p className="text-xl md:text-2xl mb-8">Elevate Your Style</p>
-            <div className="space-x-4">
-              <Link 
-                to="/products/male" 
-                className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition-colors"
-              >
-                Shop Men
-              </Link>
-              <Link 
-                to="/products/female" 
-                className="bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition-colors"
-              >
-                Shop Women
-              </Link>
-            </div>
+          <div className="text-center text-white">
+            <h1 className="text-5xl font-bold mb-6">Elevate Your Style</h1>
+            <p className="text-xl mb-8">Discover our latest collection of premium clothing</p>
+            <a
+              href="/products"
+              className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-md hover:bg-gray-100 transition-colors"
+            >
+              Shop Now
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8">Featured Collections</h2>
+      {/* Featured Categories */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <h2 className="text-3xl font-bold mb-8">Shop by Category</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Link to="/products/male" className="relative group">
-            <img 
-              src="https://images.unsplash.com/photo-1516826957135-700dedea698c"
-              alt="Men's Collection" 
-              className="w-full h-96 object-cover rounded-lg"
+          <a href="/products" className="relative group overflow-hidden rounded-lg">
+            <img
+              src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&q=80&w=987"
+              alt="Men's Collection"
+              className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Men's Collection</h3>
-                <div className="flex items-center justify-center">
-                  <span>Shop Now</span>
-                  <ArrowRight className="ml-2" />
-                </div>
-              </div>
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h3 className="text-white text-2xl font-bold">Men's Collection</h3>
             </div>
-          </Link>
-          <Link to="/products/female" className="relative group">
-            <img 
-              src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03"
-              alt="Women's Collection" 
-              className="w-full h-96 object-cover rounded-lg"
+          </a>
+          <a href="/products" className="relative group overflow-hidden rounded-lg">
+            <img
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=987"
+              alt="Women's Collection"
+              className="w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-300"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-50 transition-all flex items-center justify-center">
-              <div className="text-center">
-                <h3 className="text-2xl font-bold mb-2">Women's Collection</h3>
-                <div className="flex items-center justify-center">
-                  <span>Shop Now</span>
-                  <ArrowRight className="ml-2" />
-                </div>
-              </div>
+            <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-colors" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <h3 className="text-white text-2xl font-bold">Women's Collection</h3>
             </div>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

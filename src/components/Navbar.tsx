@@ -1,51 +1,42 @@
-import { ShoppingCart, Menu, X } from 'lucide-react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Menu, ShoppingBag, User } from 'lucide-react';
+import { useCart } from '../context/CartContext';
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+export function Navbar() {
+  const { state } = useCart();
+  const cartItemCount = state.items.reduce((total, item) => total + item.quantity, 0);
 
   return (
-    <nav className="bg-black text-white">
+    <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
-            <Link to="/" className="text-xl font-bold">AK ATTIRE</Link>
-          </div>
-          
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              <Link to="/" className="hover:text-gray-300 px-3 py-2">Home</Link>
-              <Link to="/products/male" className="hover:text-gray-300 px-3 py-2">Men</Link>
-              <Link to="/products/female" className="hover:text-gray-300 px-3 py-2">Women</Link>
-              <Link to="/about" className="hover:text-gray-300 px-3 py-2">About</Link>
-              <Link to="/contact" className="hover:text-gray-300 px-3 py-2">Contact</Link>
-              <Link to="/cart" className="hover:text-gray-300 px-3 py-2">
-                <ShoppingCart className="w-6 h-6" />
-              </Link>
+            <button className="p-2 rounded-md lg:hidden">
+              <Menu className="h-6 w-6" />
+            </button>
+            <a href="/" className="text-xl font-bold mr-8">AK ATTIRE</a>
+            <div className="hidden lg:flex lg:gap-x-12">
+              <a href="/products" className="text-sm font-medium hover:text-gray-600">Products</a>
+              <a href="/about" className="text-sm font-medium hover:text-gray-600">About</a>
+              <a href="/contact" className="text-sm font-medium hover:text-gray-600">Contact</a>
             </div>
           </div>
-
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="p-2">
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          
+          <div className="flex items-center gap-4">
+            <button className="p-2 rounded-md">
+              <User className="h-5 w-5" />
             </button>
+            <a href="/cart" className="p-2 rounded-md relative">
+              <ShoppingBag className="h-5 w-5" />
+              {cartItemCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {cartItemCount}
+                </span>
+              )}
+            </a>
           </div>
         </div>
       </div>
-
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <Link to="/" className="block hover:text-gray-300 px-3 py-2">Home</Link>
-            <Link to="/products/male" className="block hover:text-gray-300 px-3 py-2">Men</Link>
-            <Link to="/products/female" className="block hover:text-gray-300 px-3 py-2">Women</Link>
-            <Link to="/about" className="block hover:text-gray-300 px-3 py-2">About</Link>
-            <Link to="/contact" className="block hover:text-gray-300 px-3 py-2">Contact</Link>
-            <Link to="/cart" className="block hover:text-gray-300 px-3 py-2">Cart</Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
