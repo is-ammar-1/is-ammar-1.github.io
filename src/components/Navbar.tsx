@@ -1,5 +1,6 @@
 import React from 'react';
 import { Menu, ShoppingBag, User } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
 export function Navbar() {
@@ -14,11 +15,11 @@ export function Navbar() {
             <button className="p-2 rounded-md lg:hidden">
               <Menu className="h-6 w-6" />
             </button>
-            <a href="/" className="text-xl font-bold mr-8">AK ATTIRE</a>
+            <Link to="/" className="text-xl font-bold mr-8">AK ATTIRE</Link>
             <div className="hidden lg:flex lg:gap-x-12">
-              <a href="/products" className="text-sm font-medium hover:text-gray-600">Products</a>
-              <a href="/about" className="text-sm font-medium hover:text-gray-600">About</a>
-              <a href="/contact" className="text-sm font-medium hover:text-gray-600">Contact</a>
+              <Link to="/products" className="text-sm font-medium hover:text-gray-600">Products</Link>
+              <Link to="/about" className="text-sm font-medium hover:text-gray-600">About</Link>
+              <Link to="/contact" className="text-sm font-medium hover:text-gray-600">Contact</Link>
             </div>
           </div>
           
@@ -26,14 +27,14 @@ export function Navbar() {
             <button className="p-2 rounded-md">
               <User className="h-5 w-5" />
             </button>
-            <a href="/cart" className="p-2 rounded-md relative">
+            <Link to="/cart" className="p-2 rounded-md relative">
               <ShoppingBag className="h-5 w-5" />
               {cartItemCount > 0 && (
                 <span className="absolute -top-1 -right-1 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
                   {cartItemCount}
                 </span>
               )}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
