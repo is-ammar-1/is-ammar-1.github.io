@@ -1,38 +1,36 @@
-export const products = [
+import { Product } from '../types/product';
+
+export const products: Product[] = [
   {
     id: '1',
-    name: 'Urban Comfort Hoodie',
-    price: 89.99,
-    imageUrl: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&q=80&w=800',
-    description: 'Premium cotton blend hoodie perfect for everyday wear.',
-    category: 'men',
-    sizes: ['S', 'M', 'L', 'XL']
+    name: 'Classic Black Tee',
+    price: 29.99,
+    image: 'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a',
+    category: 'male',
+    description: 'Essential black t-shirt made from premium cotton.'
   },
   {
     id: '2',
-    name: 'Classic Denim Jacket',
-    price: 129.99,
-    imageUrl: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=800',
-    description: 'Timeless denim jacket with modern details.',
-    category: 'men',
-    sizes: ['S', 'M', 'L', 'XL']
+    name: 'Denim Jacket',
+    price: 89.99,
+    image: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9',
+    category: 'male',
+    description: 'Timeless denim jacket with a modern fit.'
   },
   {
     id: '3',
-    name: 'Essential White Tee',
-    price: 34.99,
-    imageUrl: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=800',
-    description: 'Premium cotton t-shirt for everyday comfort.',
-    category: 'men',
-    sizes: ['S', 'M', 'L', 'XL']
+    name: 'Summer Dress',
+    price: 59.99,
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8',
+    category: 'female',
+    description: 'Flowy summer dress perfect for any occasion.'
   },
   {
     id: '4',
-    name: 'Signature Blazer',
-    price: 199.99,
-    imageUrl: 'https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=800',
-    description: 'Sophisticated blazer for a refined look.',
-    category: 'women',
-    sizes: ['S', 'M', 'L']
+    name: 'Elegant Blouse',
+    price: 45.99,
+    image: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992',
+    category: 'female',
+    description: 'Sophisticated blouse for a professional look.'
   }
-] as const;
+];
