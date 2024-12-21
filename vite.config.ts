@@ -2,8 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
+  base: '/is-ammar-1.github.io/',
   plugins: [react()],
-  base: '/is-ammar-1.github.io/', // Replace with your repository name
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
