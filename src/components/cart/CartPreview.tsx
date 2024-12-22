@@ -9,7 +9,22 @@ export default function CartPreview() {
   const { items, isOpen } = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
 
-  const total = items.reduce((sum, item) => sum + item.product.price * item.quantity, 0);
+interface CartItem {
+    product: {
+        id: string;
+        name: string;
+        image: string;
+        price: number;
+    };
+    selectedSize: string;
+    selectedColor: {
+        name: string;
+    };
+    quantity: number;
+}
+
+
+const total: number = items.reduce((sum: number, item: CartItem) => sum + item.product.price * item.quantity, 0);
 
   return (
     <AnimatePresence>
@@ -40,7 +55,7 @@ export default function CartPreview() {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {items.map((item, index) => (
+                  {items.map((item: CartItem, index: number) => (
                     <motion.div
                       key={`${item.product.id}-${item.selectedSize}-${item.selectedColor.name}`}
                       initial={{ opacity: 0, y: 20 }}
@@ -62,13 +77,13 @@ export default function CartPreview() {
                           <div className="flex items-center gap-2 mt-2">
                             <select
                               value={item.quantity}
-                              onChange={(e) => dispatch(updateQuantity({ 
+                              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => dispatch(updateQuantity({ 
                                 item, 
                                 quantity: parseInt(e.target.value) 
                               }))}
                               className="bg-gray-700 rounded px-2 py-1"
                             >
-                              {[1, 2, 3, 4, 5].map(num => (
+                              {[1, 2, 3, 4, 5].map((num: number) => (
                                 <option key={num} value={num}>{num}</option>
                               ))}
                             </select>
