@@ -1,28 +1,15 @@
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ShoppingBag, X } from 'lucide-react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store/store';
-import { toggleCart, removeFromCart, updateQuantity } from '../../store/cartSlice';
+import { RootState } from '../store/store';
+import { toggleCart, removeFromCart, updateQuantity } from '../store/cartSlice';
+import type { CartItem } from '../store/cartSlice';
 import { Link } from 'react-router-dom';
 
 export default function CartPreview() {
   const { items, isOpen } = useSelector((state: RootState) => state.cart);
   const dispatch = useDispatch();
-
-interface CartItem {
-    product: {
-        id: string;
-        name: string;
-        image: string;
-        price: number;
-    };
-    selectedSize: string;
-    selectedColor: {
-        name: string;
-    };
-    quantity: number;
-}
-
 
 const total: number = items.reduce((sum: number, item: CartItem) => sum + item.product.price * item.quantity, 0);
 

@@ -1,5 +1,6 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Product } from '../../types/product';
+import { Product } from '../types/product';
 import { Link } from 'react-router-dom';
 
 interface ProductCardProps {

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
