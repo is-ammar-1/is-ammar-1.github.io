@@ -1,13 +1,12 @@
 import React from 'react';
-import { Facebook, Instagram, Youtube, Twitter } from 'lucide-react';
+import { Facebook, Instagram, MessagesSquare } from 'lucide-react';
 import Newsletter from '../home/Newsletter';
 
 export default function Footer() {
   const socialLinks = [
-    { icon: <Facebook size={20} />, href: 'https://facebook.com', label: 'Facebook' },
-    { icon: <Instagram size={20} />, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: <Youtube size={20} />, href: 'https://youtube.com', label: 'Youtube' },
-    { icon: <Twitter size={20} />, href: 'https://twitter.com', label: 'Twitter' }
+    { icon: <Facebook size={20} />, href: 'https://www.facebook.com/ak.attire.official', label: 'Facebook' },
+    { icon: <Instagram size={20} />, href: 'https://www.instagram.com/ak_attire_', label: 'Instagram' },
+    { icon: <MessagesSquare size={20} />, href: 'https://wa.me/+923229239447', label: 'WhatsApp' },
   ];
 
   return (

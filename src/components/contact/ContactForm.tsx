@@ -18,9 +18,18 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormInputs) => {
     setIsSubmitting(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', data);
+      // Format the message for WhatsApp
+      const whatsappMessage = encodeURIComponent(
+        `*New Contact Form Submission*\n\n` +
+        `*Name:* ${data.name}\n` +
+        `*Email:* ${data.email}\n` +
+        `*Subject:* ${data.subject}\n\n` +
+        `*Message:*\n${data.message}`
+      );
+
+      // Open WhatsApp with the formatted message
+      window.open(`https://wa.me/+923229239447?text=${whatsappMessage}`, '_blank');
+      
       setSubmitSuccess(true);
       reset();
     } catch (error) {

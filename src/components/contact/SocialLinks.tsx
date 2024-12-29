@@ -5,18 +5,13 @@ const socialLinks = [
   {
     name: 'Instagram',
     icon: Instagram,
-    url: 'https://instagram.com/akattire'
+    url: 'https://www.instagram.com/ak_attire_'
   },
   {
     name: 'Facebook',
     icon: Facebook,
-    url: 'https://facebook.com/akattire'
+    url: 'https://www.facebook.com/ak.attire.official'
   },
-  {
-    name: 'Twitter',
-    icon: Twitter,
-    url: 'https://twitter.com/akattire'
-  }
 ];
 
 export default function SocialLinks() {
