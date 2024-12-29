@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',  // Changed since we're using hash routing
+  base: '/is-ammar-1.github.io/',  // Change back to repo name
   build: {
     outDir: 'dist',
   },
