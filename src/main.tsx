@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { HashRouter } from 'react-router-dom'; // Change this from BrowserRouter
+import { HashRouter as Router } from 'react-router-dom';
 import App from './App.tsx';
-import './index.css'; // <-- Import your global Tailwind + custom styles
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <HashRouter> {/* Change this from BrowserRouter */}
+    <Router>
       <App />
-    </HashRouter>
+    </Router>
   </React.StrictMode>
 );
