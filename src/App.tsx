@@ -41,14 +41,14 @@ function App() {
                     </>
                   }
                 />
-                <Route path="about" element={<About />} />
-                <Route path="products" element={<Products />} />
-                <Route path="cart" element={<Cart />} />
-                <Route path="collections" element={<CollectionsPage />} />
-                <Route path="collections/:id" element={<CollectionPage />} />
-                <Route path="contact" element={<Contact />} />
-                <Route path="checkout" element={<Checkout />} />
-                <Route path="order-confirmation" element={<OrderConfirmation />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/collections" element={<CollectionsPage />} />
+                <Route path="/collections/:id" element={<CollectionPage />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/order-confirmation" element={<OrderConfirmation />} />
               </Routes>
             </main>
           </AnimatePresence>
