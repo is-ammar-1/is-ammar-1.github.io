@@ -45,11 +45,11 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      const response = await fetch('https://aiplatform.googleapis.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY}`,
+          'Authorization': `Bearer ${import.meta.env.VITE_GEMINI_API_KEY}`,
         },
         body: JSON.stringify({
           messages: [
@@ -58,19 +58,26 @@ export default function ChatBot() {
           ],
           max_tokens: 150,
           temperature: 0.7,
-          model: 'gpt-4o-mini',
         }),
       });
 
-      const data = await response.json();
-      const botResponse = data.choices[0].message.content;
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-      setMessages(prev => [...prev, {
-        text: botResponse,
-        isBot: true,
-        timestamp: new Date(),
-      }]);
+      const data = await response.json();
+      
+      if (data.choices && data.choices[0]?.message?.content) {
+        setMessages(prev => [...prev, {
+          text: data.choices[0].message.content,
+          isBot: true,
+          timestamp: new Date(),
+        }]);
+      } else {
+        throw new Error('Invalid response format');
+      }
     } catch (error) {
+      console.error('Gemini API Error:', error);
       setMessages(prev => [...prev, {
         text: "I apologize, but I'm having trouble connecting right now. Please try again later.",
         isBot: true,
