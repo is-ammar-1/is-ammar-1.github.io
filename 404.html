@@ -4,16 +4,8 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      const segment = 1;
-      const l = window.location;
-      const repo = '/is-ammar-1.github.io';
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, segment + 1).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segment).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      sessionStorage.setItem('redirect', window.location.pathname);
+      window.location.href = '/';
     </script>
   </head>
   <body>
